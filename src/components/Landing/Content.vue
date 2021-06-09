@@ -24,7 +24,7 @@
 <style lang="scss" scoped>
 div.container {
   height: 30em;
-  padding: 5em;
+  padding: 5em 15em;
 
   div.feature {
     display: flex;

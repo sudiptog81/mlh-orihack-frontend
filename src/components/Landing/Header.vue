@@ -24,7 +24,7 @@
 
 <style lang="scss" scoped>
 div.content {
-  padding: 5em;
+  padding: 5em 15em;
   height: 20em;
   padding-top: 2em;
   background: rgba(29, 83, 159, 1);
