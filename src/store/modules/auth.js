@@ -2,9 +2,7 @@ import Axios from "axios";
 
 export default {
   state: () => ({
-    user: {
-      title: "",
-    },
+    user: {},
   }),
   mutations: {
     setUser: (state, user) => {
@@ -33,5 +31,7 @@ export default {
       }
     },
   },
-  getters: {},
+  getters: {
+    isLoggedIn: (state) => !!state.user,
+  },
 };

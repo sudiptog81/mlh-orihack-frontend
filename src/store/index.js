@@ -9,5 +9,9 @@ export default createStore({
   mutations: {},
   actions: {},
   modules: { auth, post },
-  plugins: [createPersistedState()],
+  plugins: [
+    createPersistedState({
+      paths: ["auth", "post"],
+    }),
+  ],
 });
