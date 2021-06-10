@@ -2,28 +2,28 @@ import Axios from "axios";
 
 export default {
   state: () => ({
-    posts: [],
+    comments: [],
   }),
   mutations: {
-    setPosts: (state, posts) => {
-      state.posts = posts;
+    setComments: (state, comments) => {
+      state.comments = comments;
     },
     deletePost: (state, id) => {
-      state.posts = state.posts.filter((e) => e !== id);
+      state.comments = state.comments.filter((e) => e !== id);
     },
   },
   actions: {
-    GET_POSTS: async ({ commit }, token) => {
+    GET_COMMENTS: async ({ commit }, id) => {
       try {
         const response = await Axios.get(
-          "https://jsonplaceholder.typicode.com/posts"
+          `https://jsonplaceholder.typicode.com/post/${id}/comments`
         );
-        commit("setPosts", response.data);
+        commit("setComments", response.data);
       } catch (error) {
         console.error(error);
       }
     },
-    DELETE_POST: async ({ commit }, id) => {
+    EDIT_COMMENT: async ({ commit }, id) => {
       try {
         commit("deletePost");
       } catch (error) {

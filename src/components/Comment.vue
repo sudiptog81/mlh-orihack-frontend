@@ -1,59 +1,71 @@
 <template>
   <div class="media">
-    <img class="image" :src="imgPath" alt="userimage">
+    <!-- <img class="image" :src="imgPath" alt="userimage" /> -->
     <div class="content">
-      <h3>{{ username }}</h3>
-      <p>{{ timePosted }}</p>
-      <p>{{ comment }}</p>
+      <h3>{{ email }}</h3>
+      <!-- <p>{{ timePosted }}</p> -->
+      <p>{{ body }}</p>
     </div>
     <i class="fas fa-ellipsis-h" @click="editComment()"></i>
   </div>
 </template>
 
 <script>
+/*
+{
+  postId: 1, 
+  id: 1, 
+  name: "id labore", 
+  email: "Eliseo@gardner.biz", 
+  body: "lorem"
+}
+*/
+
 export default {
   name: "Comment",
   props: {
     imgPath: {
-      type: String
+      type: String,
     },
     username: {
-      type: String
+      type: String,
     },
     timePosted: {
-      type: String
+      type: String,
     },
     comment: {
-      type: String
-    }
+      type: String,
+    },
+    email: String,
+    body: String,
   },
   methods: {
     editComment() {
-      // edit 
-    }
-  }
+      // edit
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-  img {
-    width: 15%;
-  }
+img {
+  width: 15%;
+}
 
-  .media {
-    width: 100%;
-    height: 6rem;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-  }
+.media {
+  width: 100%;
+  height: 6rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
-  .content {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-  }
+.content {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
 </style>
