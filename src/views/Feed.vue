@@ -45,6 +45,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 button {
   background: #ffcf00;
   border-radius: 15px;
@@ -58,7 +65,8 @@ button {
 }
 
 .posts {
-  width: 90%;
+  background-color: #1e539f;
+  width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;

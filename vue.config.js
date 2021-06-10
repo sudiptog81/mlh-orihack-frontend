@@ -12,4 +12,7 @@ module.exports = {
     },
     plugins: [new StylexPlugin()],
   },
+  devServer: {
+    disableHostCheck: true,
+  },
 };
