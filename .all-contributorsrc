@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "aayush-05",
+      "name": "Aayush Gupta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/47032027?v=4",
+      "profile": "http://linkedin.com/in/aayush-gupta-447978164/",
+      "contributions": [
+        "bug",
+        "review",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "mlh-orihack-frontend",
+  "projectOwner": "sudiptog81",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
