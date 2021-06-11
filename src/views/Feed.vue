@@ -14,10 +14,10 @@
         <div class="media-content">
           <div class="field">
             <p class="control">
-              <textarea class="textarea" placeholder="Add a comment..."></textarea>
+              <textarea id="comment-text" class="textarea" placeholder="Add a comment..."></textarea>
             </p>
           </div>
-          <button class="button">Submit</button>
+          <button class="button" @click="submitComment()">Submit</button>
         </div>
       </article>
     </div>
@@ -38,10 +38,10 @@ export default {
   },
   methods: {
     createNewComment() {
-      if (!this.commentClosed) {
-        console.log("Open Comment Box");
-      }
+      this.commentClosed = !this.commentClosed;
     },
+    submitComment() {
+    }
   },
   async created() {
     await this.$store.dispatch("GET_POSTS");
@@ -69,6 +69,14 @@ button {
 .box {
   background: #fff5f5;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
+.media { 
+  width: 100%;
+}
+
+textarea {
   border-radius: 15px;
 }
 
