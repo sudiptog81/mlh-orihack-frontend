@@ -1,15 +1,17 @@
 <template>
-  <div class="content">
+  <div class="section">
     <div class="left">
       <span class="block">Where Technologists</span>
       <span class="block">
         come to <span class="text-yellow">Level Up</span>.
       </span>
-      <p>
-        The MLH Fellowship is a remote internship alternative for aspiring
-        technologists. Spend 12 weeks building your skills by collaborating on
-        real-world projects.
-      </p>
+      <div class="content">
+        <p>
+          The MLH Fellowship is a remote internship alternative for aspiring
+          technologists. Spend 12 weeks building your skills by collaborating on
+          real-world projects.
+        </p>
+      </div>
       <div>
         <router-link class="button" to="/dashboard">
           Get Started <i class="fas fa-arrow-circle-right"></i>
@@ -25,51 +27,46 @@
 </template>
 
 <style lang="scss" scoped>
-div.content {
-  padding: 5em 15em;
-  height: 20em;
-  padding-top: 2em;
+.section {
   background: rgba(29, 83, 159, 1);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  text-align: start;
 
   .left {
-    text-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    max-width: 50%;
+  p {
+    font-size: 1.2rem;
+  }
 
-    p {
-      font-size: 1.2rem;
-      margin-top: 1.2em;
-      margin-bottom: 1.2em;
-    }
+  .button {
+    background: rgba(248, 185, 42, 1);
+    border-radius: 15px;
+    display: inline-block;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
 
-    .button {
-      background: rgba(248, 185, 42, 1);
-      border: none;
-      border-radius: 2rem;
-      padding: 15px 25px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 1rem;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
+  .text-yellow {
+    color: rgba(248, 185, 42, 1);
+  }
 
-    .text-yellow {
-      color: rgba(248, 185, 42, 1);
-    }
-
-    span.block {
-      display: block;
-      font-size: 3rem;
-      line-height: 1;
-    }
+  span.block {
+    display: block;
+    font-size: 3rem;
+    line-height: 1;
   }
 
   .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
     img {
       max-width: 20em;
       height: 20em;
@@ -78,7 +75,18 @@ div.content {
       background-position: center center;
       background-repeat: no-repeat;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      margin: 1rem;
     }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section {
+    flex-direction: column;
+  }
+
+  .content {
+    display: none;
   }
 }
 </style>

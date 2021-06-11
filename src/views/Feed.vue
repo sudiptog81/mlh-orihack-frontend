@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="section">
     <article class="media">
       <div class="media-content">
         <div class="field">
@@ -91,10 +91,11 @@ export default {
 <style lang="scss" scoped>
 section {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   background-color: rgba(30, 80, 160, 0.55);
+  min-height: 100vh;
 }
 
 button {

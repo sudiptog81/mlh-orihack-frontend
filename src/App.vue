@@ -18,6 +18,10 @@ html {
   padding: 0;
 }
 
+.section {
+  padding: 2rem;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

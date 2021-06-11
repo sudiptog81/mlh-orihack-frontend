@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="section">
     <div class="feature">
       <div class="left">
         <img
@@ -22,30 +22,36 @@
 </template>
 
 <style lang="scss" scoped>
-div.container {
-  height: 30em;
-  padding: 5em 15em;
+.feature {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: start;
+  padding: 2em;
 
-  div.feature {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    text-align: start;
-
-    .left {
-      img {
-        max-width: 20em;
-        object-fit: cover;
-        border-radius: 2em;
-        background-position: center center;
-        background-repeat: no-repeat;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      }
+  .left {
+    img {
+      max-width: 20em;
+      object-fit: cover;
+      border-radius: 2em;
+      background-position: center center;
+      background-repeat: no-repeat;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
+  }
 
+  .right {
+    margin: 2rem;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .feature {
+    flex-direction: column;
+    align-content: space-around;
     .right {
-      max-width: 60%;
+      width: 100%;
     }
   }
 }
