@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "jmc529",
+      "name": "Joe Conwell",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9061382?v=4",
+      "profile": "https://conwell.info",
+      "contributions": [
+        "code",
+        "ideas",
+        "design",
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "mlh-orihack-frontend",
+  "projectOwner": "sudiptog81",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
