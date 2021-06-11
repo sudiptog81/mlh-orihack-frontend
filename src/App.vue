@@ -18,11 +18,15 @@ html {
   padding: 0;
 }
 
+.section {
+  padding: 2rem;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: rgba(30, 83, 159, 0.55);
 }
 </style>

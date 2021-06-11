@@ -10,12 +10,22 @@
         >
           Dashboard
         </router-link>
-        <router-link :class="links" to="/about">About</router-link>
       </span>
-      <button v-if="!$store.state.auth.user.username" @click="handleLogin">
-        <i class="fab fa-github"></i> Login with GitHub
-      </button>
-      <button v-else @click="handleLogout">Logout</button>
+      <span class="is-flex is-align-items-center">
+        <span v-if="$store.state.auth.user.username" class="mr-4">
+          Hey, {{ $store.state.auth.user.username }}!
+        </span>
+        <button
+          v-if="!$store.state.auth.user.username"
+          @click="handleLogin"
+          class="button is-light"
+        >
+          <i class="fab fa-github"></i> Login with GitHub
+        </button>
+        <span v-else>
+          <button @click="handleLogout" class="button is-light">Logout</button>
+        </span>
+      </span>
     </nav>
   </div>
 </template>
@@ -75,15 +85,9 @@ nav.nav-container {
 
   button {
     background: #ffffff;
-    border: none;
     border-radius: 2rem;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
     display: inline-block;
-    font-size: 1rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
   }
 }
 </style>

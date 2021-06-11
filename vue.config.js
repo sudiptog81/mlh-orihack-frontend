@@ -13,8 +13,24 @@ module.exports = {
     plugins: [new StylexPlugin()],
   },
   devServer: {
+    disableHostCheck: true,
     proxy: {
       "^/auth/": {
+        target: "http://localhost:3000/",
+        changeOrigin: true,
+        logLevel: "debug",
+      },
+      "^/post/": {
+        target: "http://localhost:3000/",
+        changeOrigin: true,
+        logLevel: "debug",
+      },
+      "^/comment/": {
+        target: "http://localhost:3000/",
+        changeOrigin: true,
+        logLevel: "debug",
+      },
+      "^/like/": {
         target: "http://localhost:3000/",
         changeOrigin: true,
         logLevel: "debug",
