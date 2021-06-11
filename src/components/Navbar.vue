@@ -13,11 +13,10 @@
         <router-link :class="links" to="/about">About</router-link>
       </span>
       <span>
-        <button
-          class="button"
-          v-if="!$store.state.auth.user.username"
-          @click="handleLogin"
-        >
+        <span v-if="$store.state.auth.user.username" class="mr-2">
+          Hey, {{ $store.state.auth.user.username }}!
+        </span>
+        <button v-if="!$store.state.auth.user.username" @click="handleLogin">
           <i class="fab fa-github"></i> Login with GitHub
         </button>
         <span v-else>

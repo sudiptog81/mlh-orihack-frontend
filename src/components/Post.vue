@@ -1,31 +1,30 @@
 <template>
-  <div class="box">
-    <article class="media">
-      <figure class="media-left">
-        <p class="image is-64x64">
-          <!-- <img class="image" :src="imgPath" alt="userimage" /> -->
-        </p>
-      </figure>
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <strong>{{ user }}</strong>
-            <!-- <small>31m</small> -->
-            <br />
-            {{ title }}
-          </p>
-        </div>
+  <div class="card">
+    <header class="card-header">
+      <p class="card-header-title">{{ title }}</p>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        {{ body }}
+        <br />
+        <span>
+          by
+          <a :href="'https://github.com/' + user">{{ user }}</a>
+        </span>
       </div>
-      <figure class="media-right">
-        <a @click="likePost()">
-          <span class="icon is-large"><i lass="far fa-heart"></i></span>
-        </a>
-      </figure>
-    </article>
-    <hr />
-    <div class="post-mark-down">
-      {{ body }}
     </div>
+    <footer class="card-footer">
+      <a @click="likePost(id)" class="card-footer-item">
+        <span class="icon is-large"><i class="fa fa-heart"></i></span>
+      </a>
+      <a
+        v-if="user === $store.state.auth.user.username"
+        @click="deletePost(id)"
+        class="card-footer-item"
+      >
+        <span class="icon is-large"><i class="fa fa-trash"></i></span>
+      </a>
+    </footer>
   </div>
 </template>
 
@@ -42,40 +41,20 @@
 export default {
   name: "Post",
   props: {
-    imgPath: {
-      type: String,
-    },
-    username: {
-      type: String,
-    },
-    timePosted: {
-      type: String,
-    },
-    postTitle: {
-      type: String,
-    },
-    postLikes: {
-      type: String,
-    },
-    postMD: {
-      type: String,
-    },
-    user: Number,
+    _id: String,
+    user: String,
     title: String,
     body: String,
   },
   methods: {
-    likePost() {
+    handleLikePost(id) {
       // like
+    },
+    handleDeletePost(id) {
+      // delete
     },
   },
 };
 </script>
 
-<style lang="scss" scoped>
-.box {
-  background: #fff5f5;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 15px;
-}
-</style>
+<style lang="scss" scoped></style>

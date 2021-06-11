@@ -23,7 +23,7 @@ export default {
     },
     LOGOUT: async ({ commit }) => {
       try {
-        commit("unsetUser");
+        localStorage.removeItem("vuex");
         window.location.href = "/auth/logout";
       } catch (error) {
         console.error(error);

@@ -8,6 +8,9 @@ export default {
     setPosts: (state, posts) => {
       state.posts = posts;
     },
+    unsetPosts: (state) => {
+      state.posts = [];
+    },
     deletePost: (state, id) => {
       state.posts = state.posts.filter((e) => e !== id);
     },
@@ -18,7 +21,7 @@ export default {
   actions: {
     GET_POSTS: async ({ commit }) => {
       try {
-        const response = await Axios.get("/post", {
+        const response = await Axios.get("/post/", {
           withCredentials: true,
         });
         console.log(response.data);
