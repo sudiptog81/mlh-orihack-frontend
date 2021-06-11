@@ -30,27 +30,20 @@
       :key="indexP"
     >
       <Post
-        :_id="_id"
+        :id="post._id"
         :title="post.title"
         :body="post.body"
         :user="post.user.username"
+        :comments="post.comments"
       />
-
-      <!-- <div
-        class="box"
-        v-for="comment of post.comments"
-        :key="comment.post"
-      >
-        <Comment :email="comment.email" :body="comment.body" />
-      </div> -->
     </div>
   </section>
 </template>
 
 <script>
 import Post from "@/components/Post.vue";
-import Comment from "@/components/Comment.vue";
 import stylex from "@ladifire-opensource/stylex";
+import { mapState } from "vuex";
 
 const styles = stylex.create({
   postButton: {
@@ -72,6 +65,7 @@ export default {
     };
   },
   computed: {
+    ...mapState(["post"]),
     postButton() {
       return stylex(styles.postButton);
     },
@@ -88,6 +82,11 @@ export default {
       }
 
       this.$store.dispatch("CREATE_POST", this.newPost);
+
+      this.newPost = {
+        title: "",
+        body: "",
+      };
     },
     createNewComment() {
       this.commentClosed = !this.commentClosed;

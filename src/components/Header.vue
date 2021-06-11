@@ -1,15 +1,14 @@
 <template>
   <div class="section">
     <div class="left">
-      <span class="block">Where Technologists</span>
+      <span class="block">Discuss with</span>
       <span class="block">
-        come to <span class="text-yellow">Level Up</span>.
+        fellow <span class="text-yellow">developers</span>.
       </span>
       <div class="content">
         <p>
-          The MLH Fellowship is a remote internship alternative for aspiring
-          technologists. Spend 12 weeks building your skills by collaborating on
-          real-world projects.
+          Start a discussion around an open-sourced project, issue or
+          contribution and get help from your peers.
         </p>
       </div>
       <div>
@@ -36,6 +35,7 @@
   text-align: start;
 
   .left {
+    font-family: monospace;
     display: flex;
     flex-direction: column;
     align-items: flex-start;

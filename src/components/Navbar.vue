@@ -10,18 +10,20 @@
         >
           Dashboard
         </router-link>
-        <router-link :class="links" to="/about">About</router-link>
       </span>
-      <span>
-        <span v-if="$store.state.auth.user.username" class="mr-2">
+      <span class="is-flex is-align-items-center">
+        <span v-if="$store.state.auth.user.username" class="mr-4">
           Hey, {{ $store.state.auth.user.username }}!
         </span>
-        <button v-if="!$store.state.auth.user.username" @click="handleLogin">
+        <button
+          v-if="!$store.state.auth.user.username"
+          @click="handleLogin"
+          class="button is-light"
+        >
           <i class="fab fa-github"></i> Login with GitHub
         </button>
         <span v-else>
-          Hey, {{ $store.state.auth.user.username }}!
-          <button @click="handleLogout">Logout</button>
+          <button @click="handleLogout" class="button is-light">Logout</button>
         </span>
       </span>
     </nav>

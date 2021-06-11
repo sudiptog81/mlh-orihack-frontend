@@ -9,12 +9,10 @@
       <div class="right">
         <h2>Discuss Issues</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit
-          nulla vitae dapibus congue. Nunc ac nibh et diam aliquam pulvinar.
-          Mauris dictum dui at diam fermentum, eu ornare ex efficitur. Sed vel
-          rhoncus urna. Cras ut volutpat justo. Integer eget lectus in turpis
-          tincidunt mattis. Quisque congue tempus urna et finibus. Integer
-          posuere magna
+          Learn with others! In a moving world developers constantly need to
+          level up their skills and keep on top of their tasks. Orihack Board
+          helps focus your gaze onto the largest problems at hand and let's you
+          reach out to other developers for their extensive knowledge too!
         </p>
       </div>
     </div>

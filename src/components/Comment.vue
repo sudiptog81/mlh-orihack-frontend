@@ -2,16 +2,19 @@
   <article class="media">
     <figure class="media-left">
       <p class="image is-64x64">
-        <!-- <img class="image" :src="imgPath" alt="userimage" /> -->
+        <img
+          class="image"
+          :src="`https://github.com/${user}.png`"
+          :alt="`${user}`"
+        />
       </p>
     </figure>
     <div class="media-content">
       <div class="content">
         <p>
-          <strong>{{ email }}</strong>
-          <!-- <small>31m</small> -->
-          <br />
           {{ body }}
+          <br />
+          by <a :href="'https://github.com/' + user">{{ user }}</a>
         </p>
       </div>
       <nav class="level is-mobile">
@@ -30,28 +33,10 @@
 </template>
 
 <script>
-/*
-{
-  postId: 1, 
-  id: 1, 
-  name: "id labore", 
-  email: "Eliseo@gardner.biz", 
-  body: "lorem"
-}
-*/
-
 export default {
   name: "Comment",
   props: {
-    imgPath: {
-      type: String,
-    },
-    email: {
-      type: String,
-    },
-    timePosted: {
-      type: String,
-    },
+    user: String,
     body: {
       type: String,
     },
