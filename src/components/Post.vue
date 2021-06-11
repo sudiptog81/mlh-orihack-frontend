@@ -9,9 +9,10 @@
       <div class="media-content">
         <div class="content">
           <p>
-            <strong>{{ id }}</strong> <!-- <small>31m</small> -->
-            <br>
-            {{ body }}
+            <strong>{{ user }}</strong>
+            <!-- <small>31m</small> -->
+            <br />
+            {{ title }}
           </p>
         </div>
       </div>
@@ -59,16 +60,15 @@ export default {
     postMD: {
       type: String,
     },
-    userId: Number,
-    id: Number,
+    user: Number,
     title: String,
     body: String,
   },
   methods: {
     likePost() {
       // like
-    }
-  }
+    },
+  },
 };
 </script>
 

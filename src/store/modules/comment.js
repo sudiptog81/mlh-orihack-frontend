@@ -15,10 +15,10 @@ export default {
   actions: {
     GET_COMMENTS: async ({ commit }, id) => {
       try {
-        const response = await Axios.get(
-          `https://jsonplaceholder.typicode.com/post/${id}/comments`
-        );
-        commit("setComments", response.data);
+        // const response = await Axios.get(
+        //   `https://jsonplaceholder.typicode.com/post/${id}/comments`
+        // );
+        // commit("setComments", response.data);
       } catch (error) {
         console.error(error);
       }

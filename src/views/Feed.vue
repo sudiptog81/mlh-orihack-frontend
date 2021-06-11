@@ -1,20 +1,44 @@
 <template>
   <section>
+    <article class="media">
+      <div class="media-content">
+        <div class="field">
+          <div class="control">
+            <input v-model="newPost.title" type="text" />
+          </div>
+        </div>
+        <div class="field">
+          <p class="control">
+            <textarea
+              class="textarea"
+              v-model="newPost.body"
+              placeholder="Write your thoughts..."
+            ></textarea>
+          </p>
+        </div>
+        <button @click="createPost" class="button">Post</button>
+      </div>
+    </article>
     <div class="posts" v-for="post of $store.state.post.posts" :key="post.id">
-      <Post :title="post.title" :id="post.id" :body="post.body" />
-      <div
+      <Post :title="post.title" :body="post.body" :user="post.user" />
+      <!-- <div
         class="box"
-        v-for="comment of $store.state.comment.comments"
-        :key="comment.id + comment.postId"
+        v-for="comment of post.comments"
+        :key="comment.post"
       >
         <Comment :email="comment.email" :body="comment.body" />
-      </div>
-      <button v-if="!commentClosed" class="button" @click="createNewComment()">Comment</button>
+      </div> -->
+      <button v-if="!commentClosed" class="button" @click="createNewComment()">
+        Comment
+      </button>
       <article v-else class="media">
         <div class="media-content">
           <div class="field">
             <p class="control">
-              <textarea class="textarea" placeholder="Add a comment..."></textarea>
+              <textarea
+                class="textarea"
+                placeholder="Add a comment..."
+              ></textarea>
             </p>
           </div>
           <button class="button">Submit</button>
@@ -30,13 +54,29 @@ import Comment from "@/components/Comment.vue";
 
 export default {
   name: "Feed",
-  components: { Post, Comment },
+  components: { Post },
   data() {
     return {
+      newPost: {
+        title: "",
+        body: "",
+      },
       commentClosed: false,
     };
   },
   methods: {
+    createPost() {
+      if (!this.newPost.title) {
+        alert();
+        return;
+      }
+      if (!this.newPost.body) {
+        alert();
+        return;
+      }
+
+      this.$store.dispatch("CREATE_POST", this.newPost);
+    },
     createNewComment() {
       if (!this.commentClosed) {
         console.log("Open Comment Box");
@@ -45,7 +85,6 @@ export default {
   },
   async created() {
     await this.$store.dispatch("GET_POSTS");
-    await this.$store.dispatch("GET_COMMENTS", 1);
   },
 };
 </script>
@@ -56,7 +95,7 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(30, 80, 160, 0.55)
+  background-color: rgba(30, 80, 160, 0.55);
 }
 
 button {

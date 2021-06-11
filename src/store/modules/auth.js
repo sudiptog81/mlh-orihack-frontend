@@ -16,7 +16,7 @@ export default {
     LOGIN: async ({ commit }, token) => {
       try {
         const response = await Axios.get("/me", { withCredentials: true });
-        commit("setUser", response.data);
+        commit("setUser", response.data.body);
       } catch (error) {
         console.error(error);
       }

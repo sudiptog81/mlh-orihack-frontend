@@ -12,10 +12,13 @@
         </router-link>
         <router-link :class="links" to="/about">About</router-link>
       </span>
-      <button v-if="!$store.state.auth.user.username" @click="handleLogin">
-        <i class="fab fa-github"></i> Login with GitHub
-      </button>
-      <button v-else @click="handleLogout">Logout</button>
+      <span>
+        Hey, {{ $store.state.auth.user.username }}!
+        <button v-if="!$store.state.auth.user.username" @click="handleLogin">
+          <i class="fab fa-github"></i> Login with GitHub
+        </button>
+        <button v-else @click="handleLogout">Logout</button>
+      </span>
     </nav>
   </div>
 </template>

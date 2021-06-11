@@ -8,14 +8,14 @@
     <div class="media-content">
       <div class="content">
         <p>
-          <strong>{{ email }}</strong> <!-- <small>31m</small> -->
-          <br>
+          <strong>{{ email }}</strong>
+          <!-- <small>31m</small> -->
+          <br />
           {{ body }}
         </p>
       </div>
       <nav class="level is-mobile">
         <div class="level-left">
-
           <!-- V-if here to check if the user owns this comment -->
           <a class="level-item" @click="replyToComment()">
             <span class="icon is-small"><i class="fas fa-reply"></i></span>
@@ -54,7 +54,7 @@ export default {
     },
     body: {
       type: String,
-    }
+    },
   },
   methods: {
     deleteComment() {
@@ -62,10 +62,9 @@ export default {
     },
     replyToComment() {
       // reply
-    }
+    },
   },
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

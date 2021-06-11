@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import Header from "@/components/Landing/Header.vue";
-import Footer from "@/components/Landing/Footer.vue";
-import Content from "@/components/Landing/Content.vue";
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
+import Content from "@/components/Content.vue";
 
 export default {
   name: "Landing",
