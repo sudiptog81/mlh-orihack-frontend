@@ -11,7 +11,9 @@
         real-world projects.
       </p>
       <div>
-        <button>Get Started <i class="fas fa-arrow-circle-right"></i></button>
+        <router-link class="button" to="/dashboard">
+          Get Started <i class="fas fa-arrow-circle-right"></i>
+        </router-link>
       </div>
     </div>
     <div class="right">
@@ -44,7 +46,7 @@ div.content {
       margin-bottom: 1.2em;
     }
 
-    button {
+    .button {
       background: rgba(248, 185, 42, 1);
       border: none;
       border-radius: 2rem;

@@ -1,19 +1,46 @@
 <template>
   <div>
     <nav class="nav-container">
-      <router-link to="/">OriHack</router-link>
-      <button @click="handleLogin">
+      <span>
+        <router-link to="/">OriHack</router-link>
+        <router-link
+          :class="links"
+          v-if="$store.state.auth.user.username"
+          to="/dashboard"
+        >
+          Dashboard
+        </router-link>
+        <router-link :class="links" to="/about">About</router-link>
+      </span>
+      <button v-if="!$store.state.auth.user.username" @click="handleLogin">
         <i class="fab fa-github"></i> Login with GitHub
       </button>
+      <button v-else @click="handleLogout">Logout</button>
     </nav>
   </div>
 </template>
 
 <script>
+import stylex from "@ladifire-opensource/stylex";
+
+const styles = stylex.create({
+  links: {
+    marginLeft: "1em",
+  },
+});
+
 export default {
+  computed: {
+    links() {
+      return stylex(styles.links);
+    },
+  },
   methods: {
     handleLogin() {
-      this.$router.push("/about");
+      window.location.href = "/auth/github";
+    },
+    handleLogout() {
+      this.$store.dispatch("LOGOUT");
     },
   },
 };
