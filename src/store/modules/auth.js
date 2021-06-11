@@ -15,9 +15,7 @@ export default {
   actions: {
     LOGIN: async ({ commit }, token) => {
       try {
-        const response = await Axios.get(
-          "https://jsonplaceholder.typicode.com/todos/1"
-        );
+        const response = await Axios.get("/me", { withCredentials: true });
         commit("setUser", response.data);
       } catch (error) {
         console.error(error);
@@ -26,6 +24,7 @@ export default {
     LOGOUT: async ({ commit }) => {
       try {
         commit("unsetUser");
+        window.location.href = "/auth/logout";
       } catch (error) {
         console.error(error);
       }
