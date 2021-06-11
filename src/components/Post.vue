@@ -1,14 +1,26 @@
 <template>
   <div class="box">
-    <div class="media">
-      <!-- <img class="image" :src="imgPath" alt="userimage" /> -->
-      <div class="content">
-        <h3>{{ id }}</h3>
-        <!-- <p>{{ timePosted }}</p> -->
+    <article class="media">
+      <figure class="media-left">
+        <p class="image is-64x64">
+          <!-- <img class="image" :src="imgPath" alt="userimage" /> -->
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>{{ id }}</strong> <!-- <small>31m</small> -->
+            <br>
+            {{ body }}
+          </p>
+        </div>
       </div>
-      <h1>{{ title }}</h1>
-      <i class="far fa-heart"></i>
-    </div>
+      <figure class="media-right">
+        <a @click="likePost()">
+          <span class="icon is-large"><i lass="far fa-heart"></i></span>
+        </a>
+      </figure>
+    </article>
     <hr />
     <div class="post-mark-down">
       {{ body }}
@@ -52,38 +64,18 @@ export default {
     title: String,
     body: String,
   },
+  methods: {
+    likePost() {
+      // like
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-img {
-  width: 15%;
-}
-
-h1 {
-  width: 45%;
-}
-
 .box {
   background: #fff5f5;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
-}
-
-.media {
-  width: 100%;
-  height: 6rem;
-  overflow: hidden;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.content {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
 }
 </style>

@@ -9,11 +9,17 @@
       >
         <Comment :email="comment.email" :body="comment.body" />
       </div>
-      <button v-if="!commentClosed" @click="createNewComment">Comment</button>
-      <div v-else>
-        <div class="box"></div>
-        <button>Post</button>
-      </div>
+      <button v-if="!commentClosed" class="button" @click="createNewComment()">Comment</button>
+      <article v-else class="media">
+        <div class="media-content">
+          <div class="field">
+            <p class="control">
+              <textarea class="textarea" placeholder="Add a comment..."></textarea>
+            </p>
+          </div>
+          <button class="button">Submit</button>
+        </div>
+      </article>
     </div>
   </section>
 </template>
@@ -50,12 +56,14 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: rgba(30, 80, 160, 0.55)
 }
 
 button {
   background: #ffcf00;
   border-radius: 15px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  align-self: flex-end;
+  float: right;
 }
 
 .box {
@@ -65,6 +73,7 @@ button {
 }
 
 .posts {
+  padding: 2rem;
   background-color: #1e539f;
   width: 70%;
   display: flex;
@@ -72,6 +81,5 @@ button {
   justify-content: center;
   align-content: space-around;
   align-items: center;
-  margin: 1rem;
 }
 </style>
