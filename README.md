@@ -1,6 +1,6 @@
 # Frontend
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Project setup
@@ -47,6 +47,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://conwell.info"><img src="https://avatars.githubusercontent.com/u/9061382?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Joe Conwell</b></sub></a><br /><a href="https://github.com/sudiptog81/mlh-orihack-frontend/commits?author=jmc529" title="Code">💻</a> <a href="#ideas-jmc529" title="Ideas, Planning, & Feedback">🤔</a> <a href="#design-jmc529" title="Design">🎨</a> <a href="https://github.com/sudiptog81/mlh-orihack-frontend/pulls?q=is%3Apr+reviewed-by%3Ajmc529" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://sudipto.ghosh.pro"><img src="https://avatars.githubusercontent.com/u/11232940?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sudipto Ghosh</b></sub></a><br /><a href="https://github.com/sudiptog81/mlh-orihack-frontend/commits?author=sudiptog81" title="Code">💻</a> <a href="https://github.com/sudiptog81/mlh-orihack-frontend/issues?q=author%3Asudiptog81" title="Bug reports">🐛</a> <a href="https://github.com/sudiptog81/mlh-orihack-frontend/pulls?q=is%3Apr+reviewed-by%3Asudiptog81" title="Reviewed Pull Requests">👀</a> <a href="#maintenance-sudiptog81" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 
